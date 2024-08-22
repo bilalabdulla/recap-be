@@ -7,7 +7,6 @@ const ShowComments = (props) => {
   return (
    <li className="post-comment">
     <p className="comment">{content}</p>
-    {/* <p className="">{commentId}</p> */}
    </li>
   )
 }

@@ -19,7 +19,7 @@ const Login = () => {
         e.preventDefault()
         try {
             const response = await axios.post(
-                'http://localhost:9000/api/v1/auth/login',
+                'https://recap-server-k01u.onrender.com/api/v1/auth/login',
                 userData,
                 {
                     headers: {

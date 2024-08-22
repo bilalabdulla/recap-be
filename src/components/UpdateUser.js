@@ -32,7 +32,7 @@ const UpdateUser = () => {
         formData.append('file', file)
         try {
             const response = await axios.patch(
-                `http://localhost:9000/api/v1/users/${localData}`,
+                `https://recap-server-k01u.onrender.com/api/v1/users/${localData}`,
                 formData,
                 {
                     headers: {
@@ -53,7 +53,7 @@ const UpdateUser = () => {
         e.preventDefault()
         try {
             const response = await axios.patch(
-                `http://localhost:9000/api/v1/users/${localData}`,
+                `https://recap-server-k01u.onrender.com/api/v1/users/${localData}`,
                 userData,
                 {
                     headers: {
@@ -96,9 +96,9 @@ const UpdateUser = () => {
 
         <div className="header-image-div">
         {
-            (currentUserHeader?.profile?.avi) ? <img src={`http://localhost:9000/images/${currentUserHeader?.profile?.avi}`} onClick={toggleModal}
+            (currentUserHeader?.profile?.avi) ? <img src={`https://recap-server-k01u.onrender.com/images/${currentUserHeader?.profile?.avi}`} onClick={toggleModal}
             className="header-image"/> 
-            : <img src={`http://localhost:9000/images/cropped-header.png`}  className="header-image" onClick={toggleNewModal}/>
+            : <img src={`https://recap-server-k01u.onrender.com/images/cropped-header.png`}  className="header-image" onClick={toggleNewModal}/>
         }
         {
             modal && <div>
@@ -129,8 +129,7 @@ const UpdateUser = () => {
 
         <div className="update-user-main">
         <label htmlFor='image-upload' className="image-btn">
-        {/* <i class="fa-solid fa-image"></i> */}
-        <img src={`http://localhost:9000/images/${currentUser?.user?.pfp}`} 
+        <img src={`https://recap-server-k01u.onrender.com/images/${currentUser?.user?.pfp}`} 
         className="tl-profile-pic"/>
         </label>
         <input className="image-dis"

@@ -23,7 +23,7 @@ const SinglePost = () => {
         const fetchSinglePost = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:9000/api/v1/posts/${postId}`,
+                    `https://recap-server-k01u.onrender.com/api/v1/posts/${postId}`,
                     {
                         headers: {
                             'Accept': 'application/json',
@@ -45,7 +45,7 @@ const SinglePost = () => {
         const fetchComments = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:9000/api/v1/comments/${postId}`,
+                    `https://recap-server-k01u.onrender.com/api/v1/comments/${postId}`,
                     {
                         headers: {
                             'Accept': 'application/json',
@@ -67,7 +67,7 @@ const SinglePost = () => {
         const fetchUser = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:9000/api/v1/users/${singlePost?.post?.createdBy}`,
+                    `https://recap-server-k01u.onrender.com/api/v1/users/${singlePost?.post?.createdBy}`,
                     {
                         headers: {
                             'Accept': 'application/json',
@@ -99,7 +99,7 @@ const SinglePost = () => {
             <h3>Post</h3>
         </div>
         <div className="single-post-user">
-        <img src={`http://localhost:9000/images/${user?.user?.pfp}`} 
+        <img src={`https://recap-server-k01u.onrender.com/images/${user?.user?.pfp}`} 
         className="tl-profile-pic"/>
         <div className="post-user-details">
         <h2>{user?.user?.firstName}</h2>
@@ -112,7 +112,7 @@ const SinglePost = () => {
        </div>
 
        <div className="reply-div">
-      <img src={`http://localhost:9000/images/${currentUser?.user?.pfp}`} 
+      <img src={`https://recap-server-k01u.onrender.com/images/${currentUser?.user?.pfp}`} 
         alt="" className="tl-profile-pic reply-image"/>
       <CreateComment postId={singlePost.post?._id}/>
       </div>
@@ -126,9 +126,6 @@ const SinglePost = () => {
             })
         }
       </ul>
-      {
-        // (singlePost.post?.createdBy === userId) ? <DeletePost /> : ''
-      }
     </div>
   )
 }

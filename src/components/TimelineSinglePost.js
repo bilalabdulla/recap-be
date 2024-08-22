@@ -23,7 +23,7 @@ const TimelineSinglePost = (props) => {
       const fetchUser = async () => {
       try {
           const response = await axios.get(
-            `http://localhost:9000/api/v1/users/${userId}`,
+            `https://recap-server-k01u.onrender.com/api/v1/users/${userId}`,
             {
               headers: {
                 'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ const TimelineSinglePost = (props) => {
       const fetchLikes = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:9000/api/v1/${postId}/likes`,
+            `https://recap-server-k01u.onrender.com/api/v1/${postId}/likes`,
             {
               headers: {
                 'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ const TimelineSinglePost = (props) => {
     const handleLike = async () => {
             try {
                 const response = await axios.post(
-                  `http://localhost:9000/api/v1/${postId}/likes`,
+                  `https://recap-server-k01u.onrender.com/api/v1/${postId}/likes`,
                   likeData,
                   {
                     headers: {
@@ -87,7 +87,7 @@ const TimelineSinglePost = (props) => {
     <div className="tl-list">
       {
         (user?.user?._id === userId) && <div className="tl-profile"> 
-        <img src={`http://localhost:9000/images/${user?.user?.pfp}`}  alt="" className="small-pic"/>  
+        <img src={`https://recap-server-k01u.onrender.com/images/${user?.user?.pfp}`}  alt="" className="small-pic"/>  
         <button 
         onClick={() => navigate(`/home/users/${userId}`)} 
         className="tl-user">{user?.user?.firstName}</button>
@@ -97,10 +97,9 @@ const TimelineSinglePost = (props) => {
       <div onClick={() => navigate(`/home/${postId}`)} className="tl-card">
       <h2 className="tl-title">{title}</h2>
       <p className="tl-content">{content}</p>
-      <img src={'http://localhost:9000/images/'+image} alt="" className="tl-image"/>
+      <img src={'https://recap-server-k01u.onrender.com/images/'+image} alt="" className="tl-image"/>
       <p className="tl-date">{createdAt.split('T')[0]}</p>
       </div>
-      {/* <p >{postId}</p> */}
       <div className="interaction">
         <div className="like">
       <button onClick={handleLike}>

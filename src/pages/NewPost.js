@@ -29,7 +29,7 @@ const NewPost = (props) => {
         let response
         try {
             response = await axios.post(
-                `http://localhost:9000/api/v1/posts`,
+                `https://recap-server-k01u.onrender.com/api/v1/posts`,
                 postData,
                 {
                     headers: {
@@ -45,7 +45,7 @@ const NewPost = (props) => {
         }
         try {
             const pfpresponse = await axios.patch(
-                `http://localhost:9000/api/v1/posts/${response?.data?.posts?._id}/update`,
+                `https://recap-server-k01u.onrender.com/api/v1/posts/${response?.data?.posts?._id}/update`,
                 formData,
                 {
                     headers: {
@@ -81,7 +81,7 @@ const NewPost = (props) => {
         <form onSubmit={handleSubmit} className="new-post-form">
 
             <div className="new-post-main">
-            <img src={`http://localhost:9000/images/${currentUser?.user?.pfp}`} 
+            <img src={`https://recap-server-k01u.onrender.com/images/${currentUser?.user?.pfp}`} 
             className="tl-profile-pic"/>
 
             <div className="new-post-inputs">

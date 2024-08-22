@@ -13,7 +13,7 @@ const Messages = () => {
     useEffect(() => {
         const fetchMessages = async () => {
             try {
-                const response = await axios.get(`http://localhost:9000/api/v1/chats/send/${userId}`,
+                const response = await axios.get(`https://recap-server-k01u.onrender.com/api/v1/chats/send/${userId}`,
                     {
                         headers: {
                             'Accept': 'application/json',
@@ -39,7 +39,7 @@ const Messages = () => {
                 if (convo._id !== userId) {
                     return <div key={convo._id} className="active-items messages"
                         onClick={() => navigate(`/home/users/${convo._id}/chats`)}> 
-                        <img src={`http://localhost:9000/images/${convo.pfp}`} 
+                        <img src={`https://recap-server-k01u.onrender.com/images/${convo.pfp}`} 
                         className="tl-profile-pic"/>
                         <div className="tl-details">
                         <p className="user-name-text">{convo.firstName}</p>

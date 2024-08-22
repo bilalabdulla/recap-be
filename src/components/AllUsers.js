@@ -11,7 +11,7 @@ const AllUsers = () => {
     const fetchAllUsers = async (req, res) => {
       try {
         const response = await axios.get(
-          'http://localhost:9000/api/v1/users',
+          'https://recap-server-k01u.onrender.com/api/v1/users',
           {
             headers: {
               'Accept': 'application/json',

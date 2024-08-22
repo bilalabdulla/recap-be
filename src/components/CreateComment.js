@@ -20,7 +20,7 @@ const CreateComment = (props) => {
         // e.preventDefault()
         try {
             const response = await axios.post(
-                `http://localhost:9000/api/v1/comments/${postId}`,
+                `https://recap-server-k01u.onrender.com/api/v1/comments/${postId}`,
                 comment,
                 {
                     headers: {

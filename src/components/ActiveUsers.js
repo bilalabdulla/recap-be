@@ -12,7 +12,7 @@ const ActiveUsers = () => {
         const fetchUsers = async () => {
             try {
                 const response = await axios.get(
-                    'http://localhost:9000/api/v1/users',
+                    'https://recap-server-k01u.onrender.com/api/v1/users',
                     {
                         headers: {
                             'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const ActiveUsers = () => {
                 if (user._id !== userId ) {
                     return <div className="active-items" key={user._id} 
                     onClick={() => navigate(`/home/users/${user._id}/chats`)}> 
-                    <img src={`http://localhost:9000/images/${user.pfp}`} alt=""
+                    <img src={`https://recap-server-k01u.onrender.com/images/${user.pfp}`} alt=""
                     className="tl-profile-pic"/>
                     <div className="tl-details">
                     <h4 className="user-name-text">{user.firstName}</h4>

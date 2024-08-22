@@ -17,7 +17,7 @@ const PostContextProvider = (props) => {
     const fetchLikes = async (postId) => {
         try {
                 const response = await axios.get(
-               `http://localhost:9000/api/v1/posts/${postId}`,
+               `https://recap-server-k01u.onrender.com/api/v1/posts/${postId}`,
                {
                   headers: {
                      'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const PostContextProvider = (props) => {
     const fetchAllFollowers = async (userId) => {
         try {
             const response = await axios.get(
-                `http://localhost:9000/api/v1/follow/${userId}/followers`,
+                `https://recap-server-k01u.onrender.com/api/v1/follow/${userId}/followers`,
                 {
                     headers: {
                         'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ const PostContextProvider = (props) => {
     const fetchAllFollowing = async (userId) => {
         try {
             const response = await axios.get(
-                `http://localhost:9000/api/v1/follow/${userId}/following`,
+                `https://recap-server-k01u.onrender.com/api/v1/follow/${userId}/following`,
                 {
                     headers: {
                         'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const PostContextProvider = (props) => {
     const fetchCurrentUser = async () => {
         try {
             const response = await axios.get(
-                `http://localhost:9000/api/v1/users/${userId}`,
+                `https://recap-server-k01u.onrender.com/api/v1/users/${userId}`,
                 {
                     headers: {
                         'Accept': 'application/json',
@@ -94,7 +94,7 @@ const PostContextProvider = (props) => {
     const fetchCurrentUserHeader = async () => {
         try {
             const response = await axios.get(
-                `http://localhost:9000/api/v1/profile/${userId}`,
+                `https://recap-server-k01u.onrender.com/api/v1/profile/${userId}`,
                 {
                     headers: {
                         'Accept': 'application/json',

@@ -12,7 +12,7 @@ const CreateChat = (props) => {
     const handleChat = async () => {
         try {
             const response = await axios.post(
-                `http://localhost:9000/api/v1/chats`,
+                `https://recap-server-k01u.onrender.com/api/v1/chats`,
                 chatData,
                 {
                     headers: {

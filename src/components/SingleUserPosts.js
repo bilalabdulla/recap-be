@@ -25,7 +25,7 @@ const SingleUserPosts = (props) => {
       <p className='user-time'>{createdAt.split('T')[1].split('.')[0]}</p>
       <h3 className='tl-title'>{title}</h3>
       <h4 className='tl-content edit-six'>{content}</h4>
-      <img src={`http://localhost:9000/images/${image}`} 
+      <img src={`https://recap-server-k01u.onrender.com/images/${image}`} 
       alt='' className='tl-image'/>
       <p className='tl-date'>{createdAt.split('T')[0]}</p>
       </div>
@@ -49,9 +49,6 @@ const SingleUserPosts = (props) => {
 
           </div>
         )
-      }
-      { 
-        // (userId && userId === postUser) ? <DeletePost postId={postId} userId={userId}/> : ''
       }
     </div>
   )

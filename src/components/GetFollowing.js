@@ -13,7 +13,7 @@ const GetFollowing = () => {
         const fetchFollowing = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:9000/api/v1/follow/${userId}/following`,
+                    `https://recap-server-k01u.onrender.com/api/v1/follow/${userId}/following`,
                     {
                         headers: {
                             'Accept': 'application/json',

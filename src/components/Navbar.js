@@ -97,7 +97,7 @@ const Navbar = () => {
 
       <section className="navbar-right">
         <div className="current-user-details">
-        <img src={`http://localhost:9000/images/${currentUser?.user?.pfp}`} 
+        <img src={`https://recap-server-k01u.onrender.com/images/${currentUser?.user?.pfp}`} 
         className="tl-profile-pic"/>
         <div>
         <h3>{currentUser?.user?.firstName}</h3>

@@ -12,7 +12,7 @@ const DeleteUser = (props) => {
     const handleDelete = async () => {
         try {
             const response = await axios.delete(
-                `http://localhost:9000/api/v1/users/${localData}`,
+                `https://recap-server-k01u.onrender.com/api/v1/users/${localData}`,
                 {
                     headers: {
                         'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ const DeleteUser = (props) => {
         }
         try {
             const response = await axios.delete(
-                `http://localhost:9000/api/v1/posts/userposts/${localData}`,
+                `https://recap-server-k01u.onrender.com/api/v1/posts/userposts/${localData}`,
                 {
                     headers: {
                         'Content-Type': 'application/json',

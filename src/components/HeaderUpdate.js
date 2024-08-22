@@ -14,7 +14,7 @@ const HeaderUpdate = (props) => {
         formData.append('file', avi)
         try {
             const response = await axios.patch(
-                `http://localhost:9000/api/v1/profile/${userId}`,
+                `https://recap-server-k01u.onrender.com/api/v1/profile/${userId}`,
                 formData,
                 {
                     headers: {

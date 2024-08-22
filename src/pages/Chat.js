@@ -16,7 +16,7 @@ const Chat = () => {
         const fetchChats = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:9000/api/v1/chats/${receiverId}`,
+                    `https://recap-server-k01u.onrender.com/api/v1/chats/${receiverId}`,
                      {
                         headers: {
                             'Accept': 'application/json',
@@ -38,7 +38,7 @@ const Chat = () => {
         const fetchUser = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:9000/api/v1/users/${receiverId}`,
+                    `https://recap-server-k01u.onrender.com/api/v1/users/${receiverId}`,
                     {
                         headers: {
                             'Accept': 'application/json',
@@ -58,7 +58,7 @@ const Chat = () => {
   return (
     <div className="chat-main">
         <div className="receiver-details">
-        <img src={`http://localhost:9000/images/${receiver?.user?.pfp}`} 
+        <img src={`https://recap-server-k01u.onrender.com/images/${receiver?.user?.pfp}`} 
         className="tl-profile-pic"/>
         <p>{receiver?.user?.firstName}</p>
         </div>

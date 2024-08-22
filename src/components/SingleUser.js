@@ -26,7 +26,7 @@ const SingleUser = () => {
         const fetchSingleUser = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:9000/api/v1/users/${userId}`,
+                    `https://recap-server-k01u.onrender.com/api/v1/users/${userId}`,
                     {
                         headers: {
                             'Accept': 'application/json',
@@ -48,7 +48,7 @@ const SingleUser = () => {
       const fetchPosts = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:9000/api/v1/posts/userposts/${userId}`,
+            `https://recap-server-k01u.onrender.com/api/v1/posts/userposts/${userId}`,
             {
               headers: {
                 'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ const SingleUser = () => {
       const fetchHeader = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:9000/api/v1/profile/${userId}`,
+            `https://recap-server-k01u.onrender.com/api/v1/profile/${userId}`,
             {
               headers: {
                 'Accept': 'application/json',
@@ -104,9 +104,9 @@ const SingleUser = () => {
         <p>{userPosts?.posts?.length} Posts total</p>
         </div>
         <div className="profile-pics">
-      { (photo) ? <img className="header" src={`http://localhost:9000/images/${photo}`} alt="" />
-          : <img className="header" src={`http://localhost:9000/images/cropped-header.png`} alt="" />}
-                <img className="profile-pic" src={`http://localhost:9000/images/${singleUser?.user?.pfp}` } alt='image' />
+      { (photo) ? <img className="header" src={`https://recap-server-k01u.onrender.com/images/${photo}`} alt="" />
+          : <img className="header" src={`https://recap-server-k01u.onrender.com/images/cropped-header.png`} alt="" />}
+                <img className="profile-pic" src={`https://recap-server-k01u.onrender.com/images/${singleUser?.user?.pfp}` } alt='image' />
           </div>
 
           <div className="details-follow">

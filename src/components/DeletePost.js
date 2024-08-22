@@ -10,7 +10,7 @@ const DeletePost = (props) => {
     const handleDelete = async () => {
         try {
             const response = await axios.delete(
-                `http://localhost:9000/api/v1/posts/${postId}`,
+                `https://recap-server-k01u.onrender.com/api/v1/posts/${postId}`,
                 {
                     headers: {
                         'Accept': 'application/json',

@@ -14,7 +14,7 @@ const AllPosts = () => {
         const fetchPosts = async () => {
             try {
                 const response = await axios.get(
-                    'http://localhost:9000/api/v1/posts',
+                    'https://recap-server-k01u.onrender.com/api/v1/posts',
                     {
                         headers: {
                             "Accept": 'application/json',

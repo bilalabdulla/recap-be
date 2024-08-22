@@ -27,7 +27,7 @@ const FollowUser = (props) => {
         const fetchFollower = async () => {
             try {
                 const response = await axios.post(
-                    `http://localhost:9000/api/v1/follow/new`,
+                    `https://recap-server-k01u.onrender.com/api/v1/follow/new`,
                     followData,
                     {
                         headers: {
@@ -50,7 +50,7 @@ const FollowUser = (props) => {
     const handleFollow = async () => {
         try {
             const response = await axios.post(
-                'http://localhost:9000/api/v1/follow/',
+                'https://recap-server-k01u.onrender.com/api/v1/follow/',
                 follower,
                 {
                     headers: {

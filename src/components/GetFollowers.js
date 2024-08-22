@@ -11,32 +11,11 @@ const GetFollowers = () => {
     const [followersList, setFollowers] = useState([])
     const [user, setUser] = useState()
 
-    // useEffect(() => {
-    //     const fetchUsers = async () => {
-    //         try {
-    //             const response = await axios.get(
-    //                 `http://localhost:9000/api/v1/users/${userId}`,
-    //                 {
-    //                     headers: {
-    //                         'Accept': 'application/json',
-    //                         'Authorization': `Bearer ${token}`
-    //                     }
-    //                 }
-    //             )
-    //             setUser(response.data)
-    //             console.log('User fetched', response.data);
-    //         } catch (error) {
-    //             console.error('error fetching user', error);
-    //         }
-    //     }
-    //     fetchUsers()
-    // }, [])
-
     useEffect(() => {
         const fetchFollowers = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:9000/api/v1/follow/${userId}/followers`,
+                    `https://recap-server-k01u.onrender.com/api/v1/follow/${userId}/followers`,
                     {
                         headers: {
                             'Accept': 'application/json',
