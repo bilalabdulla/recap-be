@@ -12,11 +12,13 @@ const Register = () => {
         email: 'garnacho@gmail.com',
         password: 'united'
     })
-
+    const [loading, setLoading] = useState(false)
     const navigate= useNavigate()
+    const [statusCode, setStatusCode] = useState()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setLoading(true)
         try {
             const response = await axios.post(
                 'https://recap-server-k01u.onrender.com/api/v1/auth/register',
@@ -34,9 +36,12 @@ const Register = () => {
             localStorage.setItem('feelersEmail', response.data.user.email)
             localStorage.setItem('token', token)
             console.log('User created: ', response.data);
+            setLoading(false)
             navigate('/home/timeline')
         } catch (error) {
+            setLoading(false)
             console.error('Error creating user', error)
+            setStatusCode(error.response.status)
         }
     }
 
@@ -100,10 +105,21 @@ const Register = () => {
         </div>
 
         <button type="submit" className="register-recap-btn">Register Now</button>
+
+        {
+            (statusCode === 500) && 
+            <p className="error">There was an error creating the account</p>
+        }
+        
         </form>
         <div className="register-image-div">
             <img src={HomeImage} className="home-image register-image"/>
         </div>
+
+        {
+            loading && 
+            <div className="loading"></div>
+        }
     </div>
   )
 }

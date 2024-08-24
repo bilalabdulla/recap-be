@@ -10,13 +10,14 @@ const Login = () => {
         email: '',
         password: ''
     })
-
+    const [loading, setLoading] = useState(false)
     const userId = localStorage.getItem('userId')
-
+    const [statusCode, setStatusCode] = useState()
     const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setLoading(true)
         try {
             const response = await axios.post(
                 'https://recap-server-k01u.onrender.com/api/v1/auth/login',
@@ -33,8 +34,11 @@ const Login = () => {
             localStorage.setItem('userId', response.data.user._id)
             localStorage.setItem('feelersName', response.data.user.firstName)
             localStorage.setItem('feelersEmail', response.data.user.email)
+            setLoading(false)
             console.log('User logged in: ', response.data);
         } catch (error) {
+            setLoading(false)
+            setStatusCode(error.response.status)
             console.log('Error logging in: ', error)
         }
     }
@@ -72,6 +76,15 @@ const Login = () => {
             onChange={handleChange}/>
         </div>
 
+        {
+            (statusCode === 400) && 
+            <p className="error">Please fill in all the details</p>
+        }
+        {
+            (statusCode === 401) && 
+            <p className="error">You have entered a wrong email or password</p>
+        }
+
         <button type="submit" className="register-recap-btn">Log in</button>
 
         <p className="no-account-text">Don't have an Account?</p>
@@ -80,6 +93,8 @@ const Login = () => {
     <div className="register-image-div">
     <img src={HomeImage} className="home-image register-image"/>
     </div>
+
+    { loading && <div className="loading"></div>}
     </div>
   )
 }
